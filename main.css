@@ -1,0 +1,188 @@
+:root{
+    /* Color */
+    --bg: #2E222F;
+    --txtColor: #ffffff;
+    --txtPlaceholderColor: #cfcfcf;
+    /* Form */
+    --bgForm: #7A3045;
+    --shadowform: 0px 7px 1px #1E161F;
+    --formInputBorderBottom: 5px solid #C4C4C4;
+    --btnColor: #93979b;
+    --btnShadow: 0px 5px 0px #ffffff;
+    --selectedBTN: #993D41;
+    --selectedBtnShadow: 0px 5px 0px #F2EC8B;
+    --success: #118838;
+    --formInputBorderBottomError: 5px solid #FA3737;
+    --formInputBorderBottomSuccess: 5px solid #7efa37;
+    --txtError: #ffffff;
+}
+
+@keyframes btnBGColor {
+    from { 
+        color: var(--txtColor);
+        background-color: var(--btnColor);
+        box-shadow: var(--btnShadow);
+    }
+    to { 
+        color: var(--txtColor);
+        background-color: var(--selectedBTN);
+        box-shadow: var(--selectedBtnShadow);
+    }
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+*:focus {
+    outline: none;
+}
+
+*:active{
+    background-color: none;
+}
+
+.btnSign{
+    color: var(--txtColor) !important;
+    background-color: var(--selectedBTN) !important;
+    box-shadow: var(--selectedBtnShadow) !important;
+    animation-name: btnBGColor;
+    animation-duration: .5s;
+}
+
+/* .error > p > .form_input{
+    border-bottom: var(--formInputBorderBottomError) !important;
+} */
+
+.error > small{
+    color: var(--txtError);
+}
+
+.error > input {
+    border-bottom: var(--formInputBorderBottomError); 
+}
+
+.success > input {
+    border-bottom: var(--formInputBorderBottomSuccess);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--txtColor);
+}
+
+main{
+    display: grid;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    gap: 2rem;
+}
+
+main > header {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+main > header > nav{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    align-items: center;
+}
+
+main > header > nav > .btn {
+    color: var(--txtColor);
+    background-color: var(--btnColor);
+    box-shadow: var(--btnShadow);
+    border: none;
+    font-size: 1.5rem;
+    height: 3.5rem;
+    width: 9rem;
+}
+
+main > header > nav > .btn:first-child{
+    border-radius: 20px 0px 0px 20px;
+}
+
+main > header > nav > .btn:last-child{
+    border-radius: 0px 20px 20px 0px;
+}
+
+main > form {
+    background-color: var(--bgForm);
+    padding: 5rem;
+    width: 30rem;
+    gap: 2rem;
+    display: grid;
+    border-radius: 20px;
+    box-shadow: var(--shadowform);
+}
+
+main > form > article{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+main > form > article > p{
+    display: flex;
+    flex-direction: column;
+}
+
+main > form > article > p > label {
+    font-size: 1rem;
+}
+
+main > form > article > p > input {
+    padding: 1.5rem;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: var(--formInputBorderBottom);
+}
+
+main > form > article > p > input::placeholder {
+    color: var(--txtPlaceholderColor);
+}
+
+main > form > footer {
+    display: flex;
+    justify-content: center;
+}
+
+main > form > footer > button {
+    border: none;
+    height: 3rem;
+    border-radius: 10px;
+    width: 100%;
+}
+
+main > footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+main > footer > p:first-child{
+    display: flex;
+    width: 10rem;
+    justify-content:space-around;
+}
+
+main > footer > p > a > img {
+    height: 2rem;
+}
+
+@media only screen and (max-width: 425px) {
+    main > form {
+        padding: 50px;
+        width: 17rem;
+    }
+}
